@@ -36,15 +36,23 @@
 	
 	<!-- 반복문, 조건문을 이용하여 구구단을 홀수단 (3, 5, 7, 9)만 브라우저에 출력해 보세요. -->
 	
-	<% for(int dan=2; dan<=9; dan++) {
+	<%-- for(int dan=2; dan<=9; dan++) {
 		if(dan % 2 != 0) {
 			out.print("<h2>구구단" + dan + "단 </h2> <hr>");
 			for(int hang=1; hang<=9; hang++) {
 			out.print(dan + " x " + hang + " = " + (dan*hang) + "<br>");
 			}
 		}
-	} %>
+	} --%>
 	
+	<%for(int dan=2; dan<=9; dan++) { 
+		if(dan % 2 != 0) { %>
+			<h2>구구단 <%=dan %>단</h2> <hr>
+			<%for(int hang=1; hang<=9; hang++) { %>
+				<%=dan %> x <%=hang %> = <%=dan*hang %> <br>
+			<% }
+		}
+	} %>
 	
 	
 	
