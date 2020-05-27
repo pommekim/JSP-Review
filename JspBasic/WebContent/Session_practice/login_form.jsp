@@ -1,5 +1,11 @@
+<%@page import="user.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%
+    	User user = (User) session.getAttribute("login");
+    %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +14,7 @@
 </head>
 <body>
 
-	<%if(session.getAttribute("login") == null) { %>
+	<%if(user == null) { %>
 
 		<form action="login_controller.jsp" method="post">
 			<p>
@@ -24,6 +30,7 @@
 		
 	<% } else { %>
 		<h2>이미 로그인 중입니다.</h2>
+		<a href="login_welcome.jsp">웰컴페이지로 이동</a>
 	<% } %>
 	
 </body>

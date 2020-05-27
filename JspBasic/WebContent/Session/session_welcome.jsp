@@ -25,7 +25,8 @@
     	}
     	
     %>
-    
+
+<%@ include file="../Application/app_basic.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,8 @@
 	<a href="session_login.jsp">로그인창으로 돌아가기</a> <br>
 	<a href="../JspObjRequest/req_album.jsp">영화 선택하기</a> <br>
 	<a href="session_logout.jsp">로그아웃</a>
-
+	<hr>
+	<h3>방문자 수: <%=count %></h3> <%--include를 통해 페이지를 심어줬기 때문에 count변수 사용 가능! --%>
 	
 
 
